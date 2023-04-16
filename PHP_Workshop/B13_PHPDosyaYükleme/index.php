@@ -29,7 +29,7 @@
             #dosya boyutunu kontrol et
             $fileSize = $_FILES["fileToUpload"["size"]];
 
-            if( $fileSize > 5000){ #500 KB
+            if( $fileSize > 500000){ #500 KB
                 echo "Dosya bpyutu fazla";
                 $uploadOk = 0;
             }
@@ -46,7 +46,7 @@
             }
 
             # dosya ismini kontrol ederek random isim verebiliriz
-            $yeni_dosyaAdi = (time().$dosyaAdi_uzantisiz).'.'.$dosyaAdi_uzantisi;
+            $yeni_dosyaAdi = md5(time().$dosyaAdi_uzantisiz).'.'.$dosyaAdi_uzantisi; // md5, gelen karakterleri şifrerleyip bize random bir değer getirir
 
             $uploadFolder = './files/';
             $dest_path = $uploadFolder.$fileName;
