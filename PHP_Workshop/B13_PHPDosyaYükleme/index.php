@@ -30,7 +30,7 @@
             $fileSize = $_FILES["fileToUpload"["size"]];
 
             if( $fileSize > 500000){ #500 KB
-                echo "Dosya bpyutu fazla";
+                echo "Dosya boyutu fazla";
                 $uploadOk = 0;
             }
 
